@@ -15,7 +15,7 @@ These three files:
 * TGCrename.sh - The brain (or heart) of it all.
 
 will use the data in the directory name to find the best course match and will rename all the multimedia files
-to an appropriate name that the TGC.bundle Agent can then use to collect metadtata.
+to an appropriate name that the TGC.bundle Agent can then use to collect metadata.
 
 # Usage
 

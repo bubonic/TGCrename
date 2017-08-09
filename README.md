@@ -25,7 +25,7 @@ First, copy all files in this repository to the course directoryd:
 
 Then cd to the course directory and run
 
-./TGCrename [option]
+> ./TGCrename [option]
 
 There are two options that can be used:
 
@@ -34,19 +34,19 @@ There are two options that can be used:
 
 If you just run:
 
-./TGCrename 
+> ./TGCrename 
 
 within the course directly, it will prompt for acceptance of course name and will prompt for acceptance to rename each file.
 
 If you run:
 
-./TGCrename -y
+> ./TGCrename -y
 
 It will prompt for acceptance of the course name and will use that data to automatcially rename the files.
 
 if you run:
 
-./TGCrename -yy
+> ./TGCrename -yy
 
 It won't prompt you for any acceptance and will use the data collected to automatically rename the files. This means you are
 fully trusting the program. (It tends to work almost all the time, but it's up to you what level of trust you would like).

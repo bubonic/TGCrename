@@ -30,6 +30,7 @@ Then cd to the course directory and run
 There are two options that can be used:
 
 -y , Trust TGCrename to automatically rename all the files, but will prompt for acceptance of matching course.
+
 -yy , Fully trust TGCrename to do everything for you. i.e., it finds the correct course and names all the files correctly.
 
 If you just run:

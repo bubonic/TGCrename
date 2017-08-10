@@ -147,12 +147,22 @@ while [ "$i" -lt "${#LFILES[@]}" ]; do
 	temp=`echo ${LFILES[$i]} | grep -i "_[0-9][0-9]"`
 	result=$?
 	if [ "$result" -eq "0" ]; then
-		mv "${LFILES[$i]}" "`echo ${LFILES[$i]} | perl -p -e 's/.*_[0-9]{2}//gi'`"
+		mv "${LFILES[$i]}" "`echo ${LFILES[$i]} | perl -p -e 's/.*_[0-9]{4}//gi'`"
 	fi
 	temp=`echo ${LFILES[$i]} | grep -i "session-[0-9][0-9]"`
 	result=$?
 	if [ "$result" -eq "0" ]; then
 		mv "${LFILES[$i]}" "`echo ${LFILES[$i]} | perl -p -e 's/.*session-//gi'`"
+	fi
+	temp=`echo ${LFILES[$i]} | grep -i "Lesson "`
+	result=$?
+	if [ "$result" -eq "0" ]; then
+		mv "${LFILES[$i]}" "`echo ${LFILES[$i]} | perl -p -e 's/.*Lesson //gi'`"
+	fi
+	temp=`echo ${LFILES[$i]} | grep -i "_[0-9][0-9]\."`
+	result=$?
+	if [ "$result" -eq "0" ]; then
+		mv "${LFILES[$i]}" "`echo ${LFILES[$i]} | perl -p -e 's/.*_//gi'`"
 	fi
 
 	let i++

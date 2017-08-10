@@ -113,7 +113,7 @@ while [ "$i" -lt "${#LFILES[@]}" ]; do
 	temp=`echo ${LFILES[$i]} | grep -i "_[0-9][0-9]"`
 	result=$?
 	if [ "$result" -eq "0" ]; then
-		mv "${LFILES[$i]}" "`echo ${LFILES[$i]} | perl -p -e 's/.*_//gi'`"
+		mv "${LFILES[$i]}" "`echo ${LFILES[$i]} | perl -p -e 's/.*_[0-9][0-9]//gi'`"
 	fi
 	temp=`echo ${LFILES[$i]} | grep -i "s01E[0-9][0-9]"`
 	result=$?

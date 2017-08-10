@@ -110,11 +110,6 @@ fi
 getMultiFiles
 i=0
 while [ "$i" -lt "${#LFILES[@]}" ]; do
-	temp=`echo ${LFILES[$i]} | grep -i "_[0-9][0-9]"`
-	result=$?
-	if [ "$result" -eq "0" ]; then
-		mv "${LFILES[$i]}" "`echo ${LFILES[$i]} | perl -p -e 's/.*_[0-9][0-9]//gi'`"
-	fi
 	temp=`echo ${LFILES[$i]} | grep -i "s01E[0-9][0-9]"`
 	result=$?
 	if [ "$result" -eq "0" ]; then
@@ -143,6 +138,11 @@ while [ "$i" -lt "${#LFILES[@]}" ]; do
 #                mv "${LFILES[$i]}" "`echo ${LFILES[$i]} | sed 's/.*[Ll][Ee][Cc][Tt]/g'`"
                 mv "${LFILES[$i]}" "`echo ${LFILES[$i]} | perl -p -e 's/.*lect//gi'`"
         fi
+	temp=`echo ${LFILES[$i]} | grep -i "_[0-9][0-9]"`
+	result=$?
+	if [ "$result" -eq "0" ]; then
+		mv "${LFILES[$i]}" "`echo ${LFILES[$i]} | perl -p -e 's/.*_[0-9]{2}//gi'`"
+	fi
 
 	let i++
 done

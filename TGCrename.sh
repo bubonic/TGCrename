@@ -143,6 +143,11 @@ while [ "$i" -lt "${#LFILES[@]}" ]; do
 	if [ "$result" -eq "0" ]; then
 		mv "${LFILES[$i]}" "`echo ${LFILES[$i]} | perl -p -e 's/.*_[0-9]{2}//gi'`"
 	fi
+	temp=`echo ${LFILES[$i]} | grep -i "session-[0-9][0-9]"`
+	result=$?
+	if [ "$result" -eq "0" ]; then
+		mv "${LFILES[$i]}" "`echo ${LFILES[$i]} | perl -p -e 's/.*session-//gi'`"
+	fi
 
 	let i++
 done

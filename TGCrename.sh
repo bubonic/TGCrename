@@ -126,6 +126,12 @@ while [ "$i" -lt "${#LFILES[@]}" ]; do
 #		mv "${LFILES[$i]}" "`echo ${LFILES[$i]} | sed 's/.*[Ll]ecture-//g'`"
 		mv "${LFILES[$i]}" "`echo ${LFILES[$i]} | perl -p -e 's/.*lecture-//gi'`"
 	fi
+	temp=`echo ${LFILES[$i]} | grep -i "lecture [0-9][0-9]"`
+	result=$?
+	if [ "$result" -eq "0" ]; then
+#		mv "${LFILES[$i]}" "`echo ${LFILES[$i]} | sed 's/.*[Ll]ecture //g'`"
+		mv "${LFILES[$i]}" "`echo ${LFILES[$i]} | perl -p -e 's/.*lecture //gi'`"
+	fi
 	temp=`echo ${LFILES[$i]} | grep -i "lecture[0-9][0-9]"`
         result=$?
         if [ "$result" -eq "0" ]; then

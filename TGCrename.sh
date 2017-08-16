@@ -7,7 +7,8 @@ ytoall=$1
 LFILES=()
 TITLE=$CNAME" (TGC"$CNUM") S01E"
 DIRNAME=${PWD##*/}
-TGCFILE="AllTGC_TItlesandCNonly.csv"
+#TGCFILE="AllTGC_TItlesandCNonly.csv"
+TGCFILE="AllTGCnameno.csv"
 lev=()
 answer="y"
 i=0
@@ -144,10 +145,10 @@ while [ "$i" -lt "${#LFILES[@]}" ]; do
 #                mv "${LFILES[$i]}" "`echo ${LFILES[$i]} | sed 's/.*[Ll][Ee][Cc][Tt]/g'`"
                 mv "${LFILES[$i]}" "`echo ${LFILES[$i]} | perl -p -e 's/.*lect//gi'`"
         fi
-	temp=`echo ${LFILES[$i]} | grep -i "_[0-9]{4}"`
+	temp=`echo ${LFILES[$i]} | grep -i "_[0-9]{3,4}"`
 	result=$?
 	if [ "$result" -eq "0" ]; then
-		mv "${LFILES[$i]}" "`echo ${LFILES[$i]} | perl -p -e 's/.*_[0-9]{4}//gi'`"
+		mv "${LFILES[$i]}" "`echo ${LFILES[$i]} | perl -p -e 's/.*_[0-9]{3,4}//gi'`"
 	fi
 	temp=`echo ${LFILES[$i]} | grep -i "session-[0-9][0-9]"`
 	result=$?

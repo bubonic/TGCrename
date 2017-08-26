@@ -2,7 +2,7 @@
 
 #filetype = `ls -1 | head -1 | awk -F '.' '{print $2}'`
 
-FILETYPE=(.mp4 .wmv .mkv .m4v .avi)
+FILETYPE=(.mp4 .wmv .mkv .m4v .avi .flv)
 ytoall=$1
 LFILES=()
 TITLE=$CNAME" (TGC"$CNUM") S01E"
@@ -116,7 +116,7 @@ while [ "$i" -lt "${#LFILES[@]}" ]; do
 	if [ "$result" -eq "0" ]; then
 		mv "${LFILES[$i]}" "`echo ${LFILES[$i]} | perl -p -e 's/.*S01E//gi'`"
 	fi
-	temp=`echo ${LFILES[$i]} | grep -i "^L[0-9]"`
+	temp=`echo ${LFILES[$i]} | grep -i "L[0-9]"`
 	result=$?
 	if [ "$result" -eq "0" ]; then
 		mv "${LFILES[$i]}" "`echo ${LFILES[$i]} | perl -p -e 's/^L//gi'`"

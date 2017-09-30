@@ -2,7 +2,7 @@
 
 #filetype = `ls -1 | head -1 | awk -F '.' '{print $2}'`
 
-FILETYPE=(.mp4 .wmv .mkv .m4v .avi .flv .AVI .mov)
+FILETYPE=(.mp4 .wmv .mkv .m4v .avi .flv .AVI .mov .m4a)
 ytoall=$1
 LFILES=()
 TITLE=$CNAME" (TGC"$CNUM") S01E"

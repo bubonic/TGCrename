@@ -54,19 +54,15 @@ if you run:
 
 where tgcfiles is a text file of directors containing your TGC lectures like the following:
 
-> /home/bubonic/Downloads/TheGreatCourses/TTC - Great Music of the Twentieth Century
-
-> /home/bubonic/Downloads/TheGreatCourses/TTC - Law School for Everyone
-
-> /home/bubonic/Downloads/TheGreatCourses/TTC - Radio Astronomy
-
-> /home/bubonic/Downloads/TheGreatCourses/TTC - The Great Trials of World History
-
-> /home/bubonic/Downloads/TheGreatCourses/TTC - The Rise of Rome
-
-> /home/bubonic/Downloads/TheGreatCourses/TTC - Understanding Imperial China
-
-> /home/bubonic/Downloads/TheGreatCourses/TTC - Why You Are Who You Are
+```
+/home/bubonic/Downloads/TheGreatCourses/TTC - Great Music of the Twentieth Century
+/home/bubonic/Downloads/TheGreatCourses/TTC - Law School for Everyone
+/home/bubonic/Downloads/TheGreatCourses/TTC - Radio Astronomy
+/home/bubonic/Downloads/TheGreatCourses/TTC - The Great Trials of World History
+/home/bubonic/Downloads/TheGreatCourses/TTC - The Rise of Rome
+/home/bubonic/Downloads/TheGreatCourses/TTC - Understanding Imperial China
+/home/bubonic/Downloads/TheGreatCourses/TTC - Why You Are Who You Are
+```
 
 It will prompt for verification of the course found and rename all those found in the tgcfiles file. 
 

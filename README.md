@@ -8,6 +8,8 @@ of commands like:
 and again and again until you got the TGC course video files named corretly. Well, I got tired of doing this so I 
 wrote a shell and perl script to do all the work for us.
 
+TGCrename2.0.sh is a bulk TGC course renamer. TGCrename.sh is deprecated at this time as TGCrename2.0.sh handles single courses or a bulkfile list. 
+
 These three files:
 
 * AllTGC_TItlesandCNonly.csv - All TGC course names and numbers separated by '['.
@@ -19,37 +21,47 @@ to an appropriate name that the TGC.bundle Agent can then use to collect metadat
 
 # Usage
 
-First, copy all files in this repository to the course directoryd:
-
-> cp AllTGC_TItlesandCNonly.csv levenstein.pl TGCrename.sh directory_of_course_containing_lecture_files
-
-Then cd to the course directory and run
-
-> ./TGCrename [option]
+> ./TGCrename2.0.sh y_option [bulkfile]
 
 There are two options that can be used:
 
--y , Trust TGCrename to automatically rename all the files, but will prompt for acceptance of matching course.
+-y , Trust TGCrename2.0.shto automatically rename all the files, but will prompt for acceptance of matching course.
 
--yy , Fully trust TGCrename to do everything for you. i.e., it finds the correct course and names all the files correctly.
+-yy , Fully trust TGCrename2.0.shto do everything for you. i.e., it finds the correct course and names all the files correctly.
 
 If you just run:
 
-> ./TGCrename 
+> ./TGCrename2.0.sh
 
-within the course directly, it will prompt for acceptance of course name and will prompt for acceptance to rename each file.
+it will show a usage menu
 
 If you run:
 
-> ./TGCrename -y
+> ./TGCrename2.0.sh -y
 
 It will prompt for acceptance of the course name and will use that data to automatcially rename the files.
 
-if you run:
+if you run: (not recommnded)
 
-> ./TGCrename -yy
+> ./TGCrename2.0.sh -yy
 
 It won't prompt you for any acceptance and will use the data collected to automatically rename the files. This means you are
-fully trusting the program. (It tends to work almost all the time, but it's up to you what level of trust you would like).
+fully trusting the program. (It tends to work 52% of the time, but it's up to you what level of trust you would like).
+
+if you run:
+
+> ./TGCrename2.0 -y /home/bubonic/tgcfiles
+
+where tgcfiles is a text file of directors containing your TGC lectures like the following:
+
+> /home/bubonic/Downloads/TheGreatCourses/TTC - Great Music of the Twentieth Century
+> /home/bubonic/Downloads/TheGreatCourses/TTC - Law School for Everyone
+> /home/bubonic/Downloads/TheGreatCourses/TTC - Radio Astronomy
+> /home/bubonic/Downloads/TheGreatCourses/TTC - The Great Trials of World History
+> /home/bubonic/Downloads/TheGreatCourses/TTC - The Rise of Rome
+> /home/bubonic/Downloads/TheGreatCourses/TTC - Understanding Imperial China
+> /home/bubonic/Downloads/TheGreatCourses/TTC - Why You Are Who You Are
+
+It will prompt for verification of the course found and rename all those found in the tgcfiles file. 
 
 
